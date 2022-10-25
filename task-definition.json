@@ -1,6 +1,6 @@
 {
   "ipcMode": null,
-  "executionRoleArn": "arn:aws:iam::233648819590:role/ecsTaskExecutionRole",
+  "executionRoleArn": null,
   "containerDefinitions": [
     {
       "dnsSearchDomains": null,
@@ -10,6 +10,11 @@
       "portMappings": [
         {
           "hostPort": 80,
+          "protocol": "tcp",
+          "containerPort": 4000
+        },
+        {
+          "hostPort": 8080,
           "protocol": "tcp",
           "containerPort": 4004
         }
@@ -25,7 +30,7 @@
       "workingDirectory": null,
       "secrets": null,
       "dockerSecurityOptions": null,
-      "memory": 500,
+      "memory": null,
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
@@ -51,31 +56,19 @@
   ],
   "placementConstraints": [],
   "memory": "2048",
-  "taskRoleArn": "arn:aws:iam::233648819590:role/ecsTaskExecutionRole",
+  "taskRoleArn": null,
   "compatibilities": [
     "EXTERNAL",
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:eu-central-1:233648819590:task-definition/book-task:1",
-  "family": "book-task",
+  "taskDefinitionArn": "arn:aws:ecs:eu-central-1:233648819590:task-definition/book-api-task:4",
+  "family": "book-api-task",
   "requiresAttributes": [
     {
       "targetId": null,
       "targetType": null,
       "value": null,
       "name": "com.amazonaws.ecs.capability.ecr-auth"
-    },
-    {
-      "targetId": null,
-      "targetType": null,
-      "value": null,
-      "name": "com.amazonaws.ecs.capability.task-iam-role"
-    },
-    {
-      "targetId": null,
-      "targetType": null,
-      "value": null,
-      "name": "ecs.capability.execution-role-ecr-pull"
     }
   ],
   "pidMode": null,
@@ -84,8 +77,8 @@
   ],
   "networkMode": null,
   "runtimePlatform": null,
-  "cpu": "2048",
-  "revision": 1,
+  "cpu": "1024",
+  "revision": 4,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
